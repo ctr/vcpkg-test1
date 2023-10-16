@@ -3,7 +3,6 @@
     "cxxopts",
     "fmt",
     "range-v3",
-    "PkgConfig",
     "matio",
     "highfive"
   ],
