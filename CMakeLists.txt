@@ -8,7 +8,10 @@ find_package(cxxopts REQUIRED)
 find_package(HighFive CONFIG REQUIRED)
 
 # From https://github.com/microsoft/vcpkg/pull/34505/commits/ae9f98968edfe2147d54873321b79148f9bbd6d6
-
+message(STATUS "${VCPKG_INSTALLED_DIR}/x64-windows/tools/pkgconf/pkgconf.exe")
+message(STATUS Before set: PKG_CONFIG_EXECUTABLE=${PKG_CONFIG_EXECUTABLE})
+set(PKG_CONFIG_EXECUTABLE "${VCPKG_INSTALLED_DIR}/x64-windows/tools/pkgconf/pkgconf.exe")
+message(STATUS After set: PKG_CONFIG_EXECUTABLE=${PKG_CONFIG_EXECUTABLE})
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(matio REQUIRED IMPORTED_TARGET matio)
 
